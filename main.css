@@ -1,0 +1,33 @@
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+#player-frame {
+    background-color: grey;    
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#player-frame text {
+    font-size: 2em;
+    width: 40%;
+    color: white
+}
+
+#cont {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#cont text {
+    margin: 5px;
+    font-size: 2em;
+}
