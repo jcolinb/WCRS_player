@@ -1,15 +1,15 @@
 const player_frame = document.getElementById('player-frame')
 const cont = document.getElementById('cont')
 
-const player_factory = () => {
+const player_factory = ({text,src}) => {
   const init = (init) => ({get:()=>init,set:(next)=>init=next});
   const state = init(false);
 
   const player = document.createElement('audio');
-  player.src = 'http://stream.wcrsfm.org:8000/wcrsfm_a';
+  player.src = src;
 
   const info = document.createElement('text');
-  info.textContent = 'WCRS';
+  info.textContent = text;
 
   const button = document.createElement('div');
   button.style.backgroundImage = 'url(assets/material_design_play.svg)';
@@ -31,7 +31,7 @@ const player_factory = () => {
   return ({load,play,pause,button,info})
 } 
 
-const player = player_factory()
+const player = player_factory({text:'WCRS',src:'http://stream.wcrsfm.org:8000/wcrsfm_a'})
 
 player_frame.append(player.button);
 player_frame.append(player.info);
